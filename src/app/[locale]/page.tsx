@@ -16,10 +16,10 @@ export default function Page() {
       <Problem />
       <Guide />
       <SocialProof />
-
       <ActionPlan />
       <About />
       <FinalCTA />
     </main>
   );
 }
+  

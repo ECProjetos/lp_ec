@@ -40,7 +40,8 @@
     "card3": {
       "title": "Inteligência de Dados e Modelagem",
       "desc": "Soluções tecnológicas, análises econométricas e simulações para apoiar estratégias com precisão e agilidade."
-    }
+    },
+    "cta": "Fale conosco!"
   },
   "social": {
     "title": "Resultados que falam por si"
@@ -76,4 +77,3 @@
     "cta": "Quero conversar"
   }
 }
-
