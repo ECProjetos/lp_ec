@@ -1,9 +1,17 @@
+/* ===============================
+   🌈 Base Imports
+   =============================== */
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* Variante customizada para dark mode */
+/* ===============================
+   🌙 Custom Variant para Dark Mode
+   =============================== */
 @custom-variant dark (&:is(.dark *));
 
+/* ===============================
+   🎨 THEME (inline) — variáveis de design
+   =============================== */
 @theme inline {
   /* === Cores e fontes === */
   --color-background: var(--background);
@@ -22,11 +30,11 @@
   --color-sidebar: var(--sidebar);
 
   /* === Gráficos === */
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
   --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
 
   /* === Cores gerais === */
   --color-ring: var(--ring);
@@ -55,6 +63,15 @@
   /* === Animações === */
   --animate-aurora: aurora 60s linear infinite;
   --animate-border-spin: border-spin 4s linear infinite;
+  --animate-orbit: orbit calc(var(--duration) * 1s) linear infinite;
+  --animate-scroll: scroll var(--animation-duration, 40s)
+    var(--animation-direction, forwards) linear infinite;
+
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
+  }
 
   @keyframes aurora {
     from {
@@ -73,9 +90,23 @@
       --angle: 360deg;
     }
   }
+
+  @keyframes orbit {
+    0% {
+      transform: rotate(calc(var(--angle) * 1deg))
+        translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));
+    }
+    100% {
+      transform: rotate(calc(var(--angle) * 1deg + 360deg))
+        translateY(calc(var(--radius) * 1px))
+        rotate(calc((var(--angle) * -1deg) - 360deg));
+    }
+  }
 }
 
-/* ====== LIGHT MODE (default) ====== */
+/* ===============================
+   ☀️ LIGHT MODE (padrão)
+   =============================== */
 :root {
   --radius: 0.625rem;
 
@@ -124,7 +155,9 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
-/* ====== DARK MODE ====== */
+/* ===============================
+   🌑 DARK MODE
+   =============================== */
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
@@ -171,7 +204,9 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
-/* ====== BASE ====== */
+/* ===============================
+   🧱 BASE STYLES
+   =============================== */
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -188,6 +223,9 @@
   }
 }
 
+/* ===============================
+   🚀 Extra animations
+   =============================== */
 :root {
   --animate-scroll: scroll var(--animation-duration, 40s)
     var(--animation-direction, forwards) linear infinite;

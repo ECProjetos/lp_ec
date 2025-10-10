@@ -1,6 +1,5 @@
 "use client";
 
-import Container from "@/components/ui/container";
 import { H2 } from "@/components/ui/typography";
 import { useTranslations } from "next-intl";
 import { GlowCard } from "@/components/ui/spotlight-card"; // ajuste o caminho conforme sua estrutura

@@ -4,9 +4,9 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Poppins } from "next/font/google";
-
-import "./globals.css";
+import "./global.css";
 import { ReactNode } from "react";
+import { ModeToggle } from "@/components/mode-toggle";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -14,8 +14,8 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Tubanharon",
-  description: "Tubanharon",
+  title: "EC Projetos",
+  description: "Consultoria econômica e de engenharia",
 };
 
 export default async function LocaleLayout({
@@ -45,6 +45,9 @@ export default async function LocaleLayout({
         >
           <NextIntlClientProvider messages={messages}>
             {children}
+            <div className="fixed bottom-4 left -4">
+              <ModeToggle />
+            </div>
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>

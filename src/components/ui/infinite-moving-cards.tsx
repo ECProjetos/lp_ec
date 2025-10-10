@@ -1,36 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import React, { useEffect, useState } from "react";
-
-type Direction = "left" | "right";
-type Speed = "fast" | "normal" | "slow";
-
-// Mantém compatibilidade com os cards de texto
-type TextItem = {
-  quote: string;
-  name: string;
-  title: string;
-};
-
-// Novo tipo para imagens
-type ImageItem = {
-  src: string;
-  alt: string;
-  href?: string;
-  caption?: string;
-  // tamanhos opcionais por item
-  width?: number;
-  height?: number;
-};
-
-// Union: o componente aceita qualquer um dos dois
-type Item = TextItem | ImageItem;
-
-function isImageItem(item: Item): item is ImageItem {
-  return (item as ImageItem).src !== undefined;
-}
 
 export const InfiniteMovingCards = ({
   items,
@@ -38,54 +9,66 @@ export const InfiniteMovingCards = ({
   speed = "fast",
   pauseOnHover = true,
   className,
-  // controles para imagens
-  imageWidth = 320,
-  imageHeight = 200,
 }: {
-  items: Item[];
-  direction?: Direction;
-  speed?: Speed;
+  items: {
+    quote: string;
+    name: string;
+    title: string;
+  }[];
+  direction?: "left" | "right";
+  speed?: "fast" | "normal" | "slow";
   pauseOnHover?: boolean;
   className?: string;
-  imageWidth?: number;
-  imageHeight?: number;
 }) => {
   const containerRef = React.useRef<HTMLDivElement>(null);
   const scrollerRef = React.useRef<HTMLUListElement>(null);
 
   useEffect(() => {
     addAnimation();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const [start, setStart] = useState(false);
-
   function addAnimation() {
     if (containerRef.current && scrollerRef.current) {
       const scrollerContent = Array.from(scrollerRef.current.children);
+
       scrollerContent.forEach((item) => {
         const duplicatedItem = item.cloneNode(true);
-        scrollerRef.current!.appendChild(duplicatedItem);
+        if (scrollerRef.current) {
+          scrollerRef.current.appendChild(duplicatedItem);
+        }
       });
+
       getDirection();
       getSpeed();
       setStart(true);
     }
   }
-
   const getDirection = () => {
-    if (!containerRef.current) return;
-    containerRef.current.style.setProperty(
-      "--animation-direction",
-      direction === "left" ? "forwards" : "reverse"
-    );
+    if (containerRef.current) {
+      if (direction === "left") {
+        containerRef.current.style.setProperty(
+          "--animation-direction",
+          "forwards"
+        );
+      } else {
+        containerRef.current.style.setProperty(
+          "--animation-direction",
+          "reverse"
+        );
+      }
+    }
   };
-
   const getSpeed = () => {
-    if (!containerRef.current) return;
-    const dur = speed === "fast" ? "20s" : speed === "normal" ? "40s" : "80s";
-    containerRef.current.style.setProperty("--animation-duration", dur);
+    if (containerRef.current) {
+      if (speed === "fast") {
+        containerRef.current.style.setProperty("--animation-duration", "20s");
+      } else if (speed === "normal") {
+        containerRef.current.style.setProperty("--animation-duration", "40s");
+      } else {
+        containerRef.current.style.setProperty("--animation-duration", "80s");
+      }
+    }
   };
-
   return (
     <div
       ref={containerRef}
@@ -102,73 +85,32 @@ export const InfiniteMovingCards = ({
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
       >
-        {items.map((item, idx) => {
-          // Card de IMAGEM
-          if (isImageItem(item)) {
-            const w = item.width ?? imageWidth;
-            const h = item.height ?? imageHeight;
-            const card = (
+        {items.map((item, idx) => (
+          <li
+            className="relative w-[350px] max-w-full shrink-0 rounded-2xl border border-b-0 border-zinc-200 bg-[linear-gradient(180deg,#fafafa,#f5f5f5)] px-8 py-6 md:w-[450px] dark:border-zinc-700 dark:bg-[linear-gradient(180deg,#27272a,#18181b)]"
+            key={item.name}
+          >
+            <blockquote>
               <div
-                className={cn(
-                  "relative w-fit shrink-0 overflow-hidden rounded-2xl border border-zinc-200 bg-[linear-gradient(180deg,#fafafa,#f5f5f5)] ring-1 ring-black/5",
-                  "dark:border-zinc-700 dark:bg-[linear-gradient(180deg,#27272a,#18181b)] dark:ring-white/10"
-                )}
-              >
-                <div className="relative" style={{ width: w, height: h }}>
-                  <Image
-                    src={item.src}
-                    alt={item.alt}
-                    fill
-                    sizes={`${w}px`}
-                    className="object-cover"
-                    priority={idx < 4}
-                  />
-                </div>
-                {item.caption ? (
-                  <div className="absolute bottom-0 left-0 right-0 bg-black/40 px-3 py-2 text-xs text-white">
-                    {item.caption}
-                  </div>
-                ) : null}
-              </div>
-            );
-
-            return item.href ? (
-              <li key={`img-${item.src}-${idx}`} className="shrink-0">
-                <a href={item.href} target="_blank" rel="noreferrer">
-                  {card}
-                </a>
-              </li>
-            ) : (
-              <li key={`img-${item.src}-${idx}`} className="shrink-0">
-                {card}
-              </li>
-            );
-          }
-
-          // Card de TEXTO (original)
-          return (
-            <li
-              className="relative w-[350px] max-w-full shrink-0 rounded-2xl border border-b-0 border-zinc-200 bg-[linear-gradient(180deg,#fafafa,#f5f5f5)] px-8 py-6 md:w-[450px] dark:border-zinc-700 dark:bg-[linear-gradient(180deg,#27272a,#18181b)]"
-              key={`txt-${item.name}-${idx}`}
-            >
-              <blockquote>
-                <span className="relative z-20 text-sm leading-[1.6] font-normal text-neutral-800 dark:text-gray-100">
-                  {item.quote}
-                </span>
-                <div className="relative z-20 mt-6 flex flex-row items-center">
-                  <span className="flex flex-col gap-1">
-                    <span className="text-sm leading-[1.6] font-normal text-neutral-500 dark:text-gray-400">
-                      {item.name}
-                    </span>
-                    <span className="text-sm leading-[1.6] font-normal text-neutral-500 dark:text-gray-400">
-                      {item.title}
-                    </span>
+                aria-hidden="true"
+                className="user-select-none pointer-events-none absolute -top-0.5 -left-0.5 -z-1 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
+              ></div>
+              <span className="relative z-20 text-sm leading-[1.6] font-normal text-neutral-800 dark:text-gray-100">
+                {item.quote}
+              </span>
+              <div className="relative z-20 mt-6 flex flex-row items-center">
+                <span className="flex flex-col gap-1">
+                  <span className="text-sm leading-[1.6] font-normal text-neutral-500 dark:text-gray-400">
+                    {item.name}
                   </span>
-                </div>
-              </blockquote>
-            </li>
-          );
-        })}
+                  <span className="text-sm leading-[1.6] font-normal text-neutral-500 dark:text-gray-400">
+                    {item.title}
+                  </span>
+                </span>
+              </div>
+            </blockquote>
+          </li>
+        ))}
       </ul>
     </div>
   );
