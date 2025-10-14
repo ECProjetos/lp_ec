@@ -88,5 +88,38 @@
     "whatsappTitle": "Falar no WhatsApp",
     "instagramTitle": "Visitar Instagram",
     "linkedinTitle": "Visitar LinkedIn"
+  },
+  "infra": {
+    "title": "Consultoria em estruturação de projetos de infraestrutura",
+    "subtitle": "Portos, ferrovias, aeroportos, hidrovias, rodovias e mais",
+    "block1": {
+      "title": "Estudos de Planejamento e Estratégia",
+      "item1": "Planejamento de transportes e logística multimodal",
+      "item2": "Análises de demanda e oferta modal",
+      "item3": "Posicionamento competitivo e estudos mercadológicos",
+      "item4": "Estratégia de operação e expansão de ativos",
+      "item5": "Análises regulatórias"
+    },
+    "block2": {
+      "title": "Viabilidade Técnica, Econômica e Ambiental",
+      "item1": "EVTEAs e estudos de pré-viabilidade",
+      "item2": "Modelagem econômica e financeira",
+      "item3": "Avaliação de riscos e impacto ambiental",
+      "item4": "Simulações de cenários e análise multicritério"
+    },
+    "block3": {
+      "title": "Engenharia Consultiva",
+      "item1": "Projetos conceituais, básicos e executivos",
+      "item2": "Projetos para portos, aeroportos, hidrovias, ferrovias e rodovias",
+      "item3": "Avaliações técnicas para licenciamento e concessão",
+      "item4": "Consultoria regulatória e institucional"
+    },
+    "block4": {
+      "title": "Apoio à Gestão e Operação",
+      "item1": "Planos diretores e estratégicos",
+      "item2": "Monitoramento e indicadores de desempenho",
+      "item3": "Apoio à operação de terminais e ativos logísticos",
+      "item4": "Modelagens de PPPs e concessões"
+    }
   }
 }

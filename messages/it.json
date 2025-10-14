@@ -84,5 +84,40 @@
     "whatsappTitle": "Chatta su WhatsApp",
     "instagramTitle": "Visita Instagram",
     "linkedinTitle": "Visita LinkedIn"
+  },
+  "infra": {
+    "map_alt": "Mappa del mondo di sfondo",
+    "flow_alt": "Icone del flusso infrastrutturale",
+    "title": "Consulenza nella strutturazione di progetti infrastrutturali",
+    "subtitle": "Porti, ferrovie, aeroporti, vie d’acqua, autostrade e altro",
+    "block1": {
+      "title": "Studi di Pianificazione e Strategia",
+      "item1": "Pianificazione dei trasporti e della logistica multimodale",
+      "item2": "Analisi della domanda e dell’offerta per modalità",
+      "item3": "Posizionamento competitivo e studi di mercato",
+      "item4": "Strategia di gestione e ampliamento degli asset",
+      "item5": "Analisi normative e regolatorie"
+    },
+    "block2": {
+      "title": "Fattibilità Tecnica, Economica e Ambientale",
+      "item1": "Studi di fattibilità e prefattibilità (EVTEA)",
+      "item2": "Modellazione economica e finanziaria",
+      "item3": "Valutazione dei rischi e impatto ambientale",
+      "item4": "Simulazioni di scenari e analisi multicriterio"
+    },
+    "block3": {
+      "title": "Ingegneria Consulenziale",
+      "item1": "Progetti concettuali, di base ed esecutivi",
+      "item2": "Progetti per porti, aeroporti, vie d’acqua, ferrovie e autostrade",
+      "item3": "Valutazioni tecniche per licenze e concessioni",
+      "item4": "Consulenza normativa e istituzionale"
+    },
+    "block4": {
+      "title": "Supporto alla Gestione e Operazione",
+      "item1": "Piani strategici e direttori",
+      "item2": "Monitoraggio e indicatori di prestazione",
+      "item3": "Supporto alla gestione di terminal e asset logistici",
+      "item4": "Modellazione di PPP e concessioni"
+    }
   }
 }

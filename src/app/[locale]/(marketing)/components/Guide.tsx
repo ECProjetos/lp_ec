@@ -64,7 +64,9 @@ export default function Guide() {
                 <div className="rounded-full hover:shadow-lg p-3">
                   <feature.Icon className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold">{feature.name}</h3>
+                <h3 className="text-xl text-gray-700 font-semibold  ">
+                  {feature.name}
+                </h3>
               </div>
               <p className="mt-4 text-muted-foreground">
                 {feature.description}

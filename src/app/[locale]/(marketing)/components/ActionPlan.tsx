@@ -21,12 +21,12 @@ export default function ActionPlan() {
   ];
 
   return (
-    <div className="p-30 flex flex-col text-center">
-      <H2 className="mb-6 text-3xl md:text-4xl font-extrabold text-brand-primary drop-shadow-sm">
+    <div className="flex flex-col text-center">
+      <H2 className="mb-6 text-3xl md:text-4xl font-semibold text-gray-700 drop-shadow-sm">
         {t("title")}
       </H2>
 
-      <div className="flex">
+      <div className="flex m-10">
         <HoverEffect items={projects} />
         <Example />
       </div>

@@ -55,13 +55,8 @@ export const InfiniteMovingCards = ({
   return (
     <div
       ref={containerRef}
-      className={cn(
-        "relative z-20 max-w-full overflow-hidden",
-        // você pode manter o restante das suas classes aqui
-        className
-      )}
+      className={cn("relative z-20 max-w-full overflow-hidden", className)}
       style={{
-        // fade nas bordas (12% de cada lado). Ajuste como quiser.
         maskImage:
           "linear-gradient(to right, transparent, rgba(0,0,0,1) 12%, rgba(0,0,0,1) 88%, transparent)",
         WebkitMaskImage:
@@ -71,16 +66,13 @@ export const InfiniteMovingCards = ({
       <ul
         ref={scrollerRef}
         className={cn(
-          "flex w-max min-w-full shrink-0 flex-nowrap gap-8 py-6",
+          "flex w-max min-w-full shrink-0 flex-nowrap gap-[4px] py-6",
           start && "animate-scroll",
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}
       >
         {items.map((item, idx) => (
-          <li
-            key={idx}
-            className="shrink-0 flex items-center justify-center px-4"
-          >
+          <li key={idx} className="shrink-0 flex items-center justify-center">
             {item}
           </li>
         ))}

@@ -22,7 +22,7 @@ export function NavbarDemo() {
         <div className="flex items-center gap-4">
           {/* WhatsApp */}
           <a
-            href="https://wa.me/554899114-7704"
+            href="https://wa.me/5548991147704"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Converse conosco no WhatsApp"

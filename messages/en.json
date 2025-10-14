@@ -84,5 +84,40 @@
     "whatsappTitle": "Chat on WhatsApp",
     "instagramTitle": "Visit Instagram",
     "linkedinTitle": "Visit LinkedIn"
+  },
+  "infra": {
+    "map_alt": "Background world map",
+    "flow_alt": "Infrastructure flow icons",
+    "title": "Consulting in infrastructure project structuring",
+    "subtitle": "Ports, railways, airports, waterways, highways and more",
+    "block1": {
+      "title": "Planning and Strategy Studies",
+      "item1": "Transport and multimodal logistics planning",
+      "item2": "Demand and supply analysis by mode",
+      "item3": "Competitive positioning and market studies",
+      "item4": "Asset operation and expansion strategy",
+      "item5": "Regulatory analysis"
+    },
+    "block2": {
+      "title": "Technical, Economic and Environmental Feasibility",
+      "item1": "Feasibility and pre-feasibility studies (EVTEA)",
+      "item2": "Economic and financial modeling",
+      "item3": "Risk assessment and environmental impact",
+      "item4": "Scenario simulations and multi-criteria analysis"
+    },
+    "block3": {
+      "title": "Consulting Engineering",
+      "item1": "Conceptual, basic and executive designs",
+      "item2": "Projects for ports, airports, waterways, railways and highways",
+      "item3": "Technical assessments for licensing and concession",
+      "item4": "Regulatory and institutional consulting"
+    },
+    "block4": {
+      "title": "Management and Operation Support",
+      "item1": "Strategic and master plans",
+      "item2": "Monitoring and performance indicators",
+      "item3": "Support for terminal and asset operation",
+      "item4": "PPP and concession modeling"
+    }
   }
 }

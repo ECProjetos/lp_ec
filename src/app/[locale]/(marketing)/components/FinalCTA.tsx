@@ -8,7 +8,6 @@ import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { cubicBezier, motion, useReducedMotion } from "motion/react";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 
 /**
  * Melhorias de layout e imagem
@@ -90,7 +89,7 @@ export default function FinalCTA({
         >
           {/* Coluna de texto */}
           <div className="text-center md:text-left">
-            <H2 className="mb-4 text-black drop-shadow-[0_1px_0_rgba(255,255,255,0.4)]">
+            <H2 className="mb-4 text-gray-700 drop-shadow-[0_1px_0_rgba(255,255,255,0.4)]">
               {t("headline")}
             </H2>
 
@@ -100,7 +99,7 @@ export default function FinalCTA({
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.4, ease: "easeOut", delay: 0.05 }}
             >
-              <Muted className="mx-auto md:mx-0 mb-8 max-w-2xl text-black/80">
+              <Muted className="mx-auto md:mx-0 mb-8 max-w-2xl text-gray-700">
                 {t("sub")}
               </Muted>
             </motion.div>
@@ -125,37 +124,6 @@ export default function FinalCTA({
           </div>
 
           {/* Coluna da imagem */}
-          <motion.div
-            initial={reduce ? undefined : { opacity: 0, y: 8 }}
-            whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.45 }}
-            transition={{ duration: 0.45, ease: "easeOut" }}
-            className="relative mx-auto w-full max-w-xl"
-            aria-hidden
-          >
-            {/* fundo com glow e moldura */}
-            <div className="absolute -inset-4 rounded-[32px] bg-white/10 blur-2xl" />
-            <div className="relative rounded-3xl border border-white/30 bg-white/70 p-4 shadow-xl backdrop-blur">
-              <motion.div
-                animate={reduce ? undefined : { y: [0, -6, 0] }}
-                transition={
-                  reduce
-                    ? undefined
-                    : { duration: 6, repeat: Infinity, ease: "easeInOut" }
-                }
-              >
-                <Image
-                  src="/flow_ec.svg"
-                  alt="Fluxo de trabalho da EC Projetos"
-                  width={960}
-                  height={720}
-                  className="h-auto w-full rounded-2xl"
-                  priority={false}
-                  sizes="(max-width: 768px) 88vw, (max-width: 1024px) 44vw, 520px"
-                />
-              </motion.div>
-            </div>
-          </motion.div>
         </motion.div>
       </Container>
 

@@ -217,7 +217,7 @@ const HoverCard = ({
             }}
             transition={{ duration: 0.25, ease: "easeOut" }}
             className={cn(
-              "text-xl font-bold text-brand-primary drop-shadow-sm transition-all duration-300"
+              "text-xl text-gray-700 font-semibold drop-shadow-sm transition-all duration-300"
             )}
           >
             {title}
