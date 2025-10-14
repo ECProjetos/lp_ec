@@ -17,7 +17,7 @@ const logos = Array.from({ length: EMPRESAS_COUNT }, (_, i) => {
 // se o InfiniteMovingCards espera "items" como objetos, use este formato.
 // (Se ele aceitar ReactNode direto, você pode passar `logoNodes` em vez de `items`.)
 const logoNodes = logos.map((src, idx) => (
-  <div key={src} className="relative h-full w-[350px] lg:h-20 lg:w-52">
+  <div key={src} className="relative h-24 w-60 lg:h-32 lg:w-72">
     <Image
       src={src}
       alt={`Logo cliente ${idx + 1}`}

@@ -8,11 +8,14 @@ import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { cubicBezier, motion, useReducedMotion } from "motion/react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 type FinalCTAProps = {
   id?: string;
   className?: string;
 };
+
+
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 16 },
@@ -111,6 +114,7 @@ export default function FinalCTA({
             </Button>
           </motion.div>
         </motion.div>
+        <Image src="flow_ec.svg" width={400} height={300} alt="a" />
       </Container>
 
       {/* bordas com vinheta sutil para “fechar” a seção */}

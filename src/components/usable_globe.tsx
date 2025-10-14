@@ -13,18 +13,18 @@ const World = dynamic(
 export function GlobeDemo() {
   const globeConfig = {
     pointSize: 4,
-    globeColor: "#062056",
+    globeColor: "#cfd8e6", // 🔆 mais claro (antes: "#9ba5bbff")
     showAtmosphere: true,
     atmosphereColor: "#FFFFFF",
-    atmosphereAltitude: 0.1,
-    emissive: "#062056",
-    emissiveIntensity: 0.1,
-    shininess: 0.9,
-    polygonColor: "rgba(255,255,255,0.7)",
-    ambientLight: "#38bdf8",
+    atmosphereAltitude: 0.15, // um pouco mais espessa, dá aparência de brilho
+    emissive: "#89a8ff", // 🔆 clareia o brilho interno (antes: "#062056")
+    emissiveIntensity: 0.3, // 🔆 aumenta intensidade de luz refletida
+    shininess: 1.2, // 🔆 superfície mais brilhante
+    polygonColor: "rgba(30, 50, 80, 0.9)", // 🔆 fronteiras e detalhes mais claros
+    ambientLight: "#bfefff", // 🔆 luz ambiente mais clara
     directionalLeftLight: "#ffffff",
     directionalTopLight: "#ffffff",
-    pointLight: "#ffffff",
+    pointLight: "#ffffffff",
     arcTime: 1000,
     arcLength: 0.9,
     rings: 1,
@@ -33,7 +33,7 @@ export function GlobeDemo() {
     autoRotate: true,
     autoRotateSpeed: 0.5,
   };
-  const colors = ["#06b6d4", "#3b82f6", "#6366f1"];
+  const colors = ["#062cd4ff", "#3b82f6", "#6366f1"];
   const sampleArcs = [
     {
       order: 1,

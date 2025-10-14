@@ -8,6 +8,7 @@ import {
 } from "motion/react";
 import { Ship, Plane } from "lucide-react";
 import React, { useRef, useState } from "react";
+import Image from "next/image";
 
 interface NavbarProps {
   children: React.ReactNode;
@@ -234,7 +235,7 @@ export const NavbarLogo = () => {
       href="#"
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-neutral-900"
     >
-      <img src="/ecprojetos.png" alt="logo" width={200} height={100} />
+      <Image src="/ecprojetos.png" alt="logo" width={200} height={100} />
     </a>
   );
 };
