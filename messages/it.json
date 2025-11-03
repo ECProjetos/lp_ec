@@ -41,7 +41,13 @@
     },
     "cta": "Parliamone"
   },
-  "social": { "title": "Risultati che parlano da soli" },
+  "social": {
+    "text1": "Nel corso degli anni, EC Projetos ha contribuito direttamente alla trasformazione dell’infrastruttura logistica in Brasile.",
+    "metric1": "+130 milioni di tonnellate/anno di domanda stimata in diversi progetti valutati.",
+    "metric2": "+40 miliardi di R$ in CAPEX stimati in progetti di ingegneria consulenziale.",
+    "metric3": "+200 progetti strutturali di grande portata valutati nella loro fattibilità tecnica, economica e ambientale.",
+    "clientsTitle": "Alcuni dei nostri clienti"
+  },
   "actionPlan": {
     "title": "Come funziona la nostra collaborazione",
     "subtitle": "Dalla valutazione alla consegna: un processo trasparente",

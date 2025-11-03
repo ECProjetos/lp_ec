@@ -1,4 +1,5 @@
 // components/ui/typography.tsx
+import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
 
 export function H1({
@@ -42,6 +43,24 @@ export function Muted({
 }) {
   return (
     <p className={`text-base md:text-lg text-brand-textMuted ${className}`}>
+      {children}
+    </p>
+  );
+}
+export function P({
+  className,
+  children,
+  ...props
+}: // eslint-disable-next-line @typescript-eslint/no-explicit-any
+any) {
+  return (
+    <p
+      className={cn(
+        "text-base leading-relaxed text-gray-700 dark:text-gray-300",
+        className
+      )}
+      {...props}
+    >
       {children}
     </p>
   );

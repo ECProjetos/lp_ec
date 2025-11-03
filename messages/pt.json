@@ -44,7 +44,12 @@
     "cta": "Fale conosco!"
   },
   "social": {
-    "title": "Resultados que falam por si"
+    "title": "Resultados que falam por si",
+    "text1": "Ao longo dos anos, a EC Projetos vem contribuindo diretamente para a transformação da infraestrutura logística no Brasil.",
+    "metric1": "+130 milhões de toneladas/ano de demanda estimadas em diversos projetos avaliados.",
+    "metric2": "+R$40 bilhões em CAPEX calculados em projetos de engenharia consultiva.",
+    "metric3": "+200 projetos estruturantes de grande vulto avaliados em sua viabilidade técnica, econômica e ambiental.",
+    "clientsTitle": "Alguns de nossos clientes"
   },
   "actionPlan": {
     "title": "Como funciona nossa parceria",

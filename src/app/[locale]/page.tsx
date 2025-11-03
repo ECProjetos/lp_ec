@@ -1,6 +1,5 @@
 // app/[locale]/page.tsx
 import Hero from "./(marketing)/components/Hero";
-import Problem from "./(marketing)/components/Problem";
 import Guide from "./(marketing)/components/Guide";
 import SocialProof from "./(marketing)/components/SocialProof";
 import ActionPlan from "./(marketing)/components/ActionPlan";
@@ -13,10 +12,9 @@ export default function Page() {
   return (
     <main>
       <Hero />
-      <InfraGrid />
       <Guide />
+      <InfraGrid />
       <SocialProof />
-      <Problem />
       <ActionPlan />
       <About />
       <FinalCTA />

@@ -2,7 +2,7 @@
 "use client";
 
 import { H2, Muted } from "@/components/ui/typography";
-import { GlobeDemo } from "@/components/usable_globe";
+import Image from "next/image";
 import { FileTextIcon, InputIcon, GlobeIcon } from "@radix-ui/react-icons";
 import { useTranslations } from "next-intl";
 
@@ -44,7 +44,7 @@ export default function Guide() {
   ];
 
   return (
-    <div className="p-30 bg-gradient-to-t from-blue-400 via-blue-500 to-blue-600">
+    <div className="p-30 bg-blue-800">
       <H2 className="mb-6 text-3xl md:text-4xl font-extrabold text-white drop-shadow-sm">
         {t("title")}
       </H2>
@@ -76,7 +76,14 @@ export default function Guide() {
             </div>
           ))}
         </div>
-        <GlobeDemo />
+        <Image
+          src="/cgd.svg"
+          alt="cdg"
+          width={600}
+          height={400}
+          priority={false}
+          className="h-auto w-full max-w-[560px] px-5"
+        />
       </div>
     </div>
   );

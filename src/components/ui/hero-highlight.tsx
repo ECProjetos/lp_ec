@@ -48,7 +48,7 @@ export const HeroHighlight = ({
       className={cn(
         // fundo: gradiente azul no light e no dark
         "group relative flex h-[40rem] w-full items-center justify-center",
-        "bg-gradient-to-t from-blue-700 via-blue-600 to-blue-500",
+        "bg-blue-900",
         containerClassName
       )}
       onMouseMove={handleMouseMove}

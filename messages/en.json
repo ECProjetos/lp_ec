@@ -41,7 +41,13 @@
     },
     "cta": "Let’s talk"
   },
-  "social": { "title": "Results that speak for themselves" },
+  "social": {
+    "text1": "Over the years, EC Projetos has been directly contributing to the transformation of Brazil's logistics infrastructure.",
+    "metric1": "+130 million tons per year of estimated demand in various evaluated projects.",
+    "metric2": "+R$40 billion in CAPEX estimated in consulting engineering projects.",
+    "metric3": "+200 large-scale structuring projects evaluated for their technical, economic, and environmental feasibility.",
+    "clientsTitle": "Some of our clients"
+  },
   "actionPlan": {
     "title": "How our partnership works",
     "subtitle": "From assessment to delivery: a transparent process",

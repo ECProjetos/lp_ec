@@ -10,14 +10,13 @@ export default function InfraGrid() {
   const t = useTranslations("infra");
 
   return (
-    <section id="infra" className="relative overflow-hidden bg-white py-20">
-      {/* Background map */}
+    <section id="infra" className="relative overflow-hidden  py-20">
       <div className="absolute inset-0 -z-10">
         <Image
           src="/map.png"
           alt="Mapa de fundo"
           fill
-          className="object-cover opacity-60"
+          className="object-cover "
           priority
         />
       </div>

@@ -8,6 +8,7 @@ import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { cubicBezier, motion, useReducedMotion } from "motion/react";
 import { Button } from "@/components/ui/button";
+import { GlobeDemo } from "@/components/usable_globe";
 
 /**
  * Melhorias de layout e imagem
@@ -45,7 +46,7 @@ export default function FinalCTA({
       aria-labelledby={`${id}-heading`}
       className={cn(
         // base
-        "relative overflow-hidden py-24 sm:py-32",
+        "relative overflow-hidden ",
         // gradiente de fundo
         "bg-gradient-to-b from-brand-primary via-brand-primary to-brand-primary",
         className
@@ -98,11 +99,7 @@ export default function FinalCTA({
               whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.4, ease: "easeOut", delay: 0.05 }}
-            >
-              <Muted className="mx-auto md:mx-0 mb-8 max-w-2xl text-gray-700">
-                {t("sub")}
-              </Muted>
-            </motion.div>
+            ></motion.div>
 
             <motion.div
               initial={reduce ? undefined : { opacity: 0, scale: 0.98 }}
@@ -111,11 +108,15 @@ export default function FinalCTA({
               transition={{ duration: 0.35, ease: [0, 0, 0.2, 1], delay: 0.08 }}
               className="inline-flex"
             >
-              <Button asChild className="bg-blue-600">
+              <Button
+                asChild
+                className="bg-blue-600 w-full sm:w-auto px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:scale-105 transform transition focus:outline-none focus:ring-4 focus:ring-blue-300"
+              >
                 <a
-                  href="https://wa.me/5548991147704" // somente dígitos
+                  href="https://wa.me/5548991147704"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={t("cta", { default: "Entre em Contato" })}
                 >
                   {t("cta", { default: "Entre em Contato" })}
                 </a>
@@ -124,6 +125,7 @@ export default function FinalCTA({
           </div>
 
           {/* Coluna da imagem */}
+          <GlobeDemo />
         </motion.div>
       </Container>
 

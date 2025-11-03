@@ -2,22 +2,21 @@
 "use client";
 
 import Image from "next/image";
-import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import { useTranslations } from "next-intl";
-import { H2 } from "@/components/ui/typography";
+import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
+import { H2, P } from "@/components/ui/typography";
+import { CountingNumber } from "@/components/ui/counting-number";
 
 const EMPRESAS_COUNT = 27;
 
-// gera: /empresas/CLIENTES_01.png ... /empresas/CLIENTES_27.png
+// Gera: /empresas/CLIENTES_01.png ... /empresas/CLIENTES_27.png
 const logos = Array.from({ length: EMPRESAS_COUNT }, (_, i) => {
   const n = String(i + 1).padStart(2, "0");
-  return `/empresas/CLIENTEs_${n}.png`;
+  return `/empresas/CLIENTES_${n}.png`;
 });
 
-// se o InfiniteMovingCards espera "items" como objetos, use este formato.
-// (Se ele aceitar ReactNode direto, você pode passar `logoNodes` em vez de `items`.)
 const logoNodes = logos.map((src, idx) => (
-  <div key={src} className="relative h-36 w-60 lg:h-32 lg:w-72">
+  <div key={src} className="relative h-16 w-40 md:h-20 md:w-48">
     <Image
       src={src}
       alt={`Logo cliente ${idx + 1}`}
@@ -29,14 +28,79 @@ const logoNodes = logos.map((src, idx) => (
 
 export default function SocialProof() {
   const t = useTranslations("social");
+
   return (
-    <div className="relative flex h-[20rem] items-center justify-center overflow-hidden rounded-md bg-white antialiased">
-      <H2 className="m-10 text-blue-700">{t("title")}</H2>
-      <InfiniteMovingCards
-        items={logoNodes} // <- usa TODAS as imagens da pasta
-        direction="right"
-        speed="slow"
-      />
-    </div>
+    <section className="relative w-full bg-blue-900 text-white py-16 px-6 md:px-12 overflow-hidden">
+      <div className="mx-auto max-w-7xl flex flex-col gap-12">
+        {/* Título da seção */}
+        <div className="text-center">
+          <H2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            {t("title")}
+          </H2>
+        </div>
+
+        {/* Topo: Texto + Métricas */}
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-10">
+          <div className="flex-1">
+            <P className="text-xl font-light leading-relaxed max-w-xl">
+              {t("text1")}
+            </P>
+          </div>
+
+          <div className="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+            <div>
+              <H2 className="text-3xl md:text-4xl font-bold text-white">
+                +
+                <CountingNumber
+                  number={130}
+                  inView={true}
+                  transition={{ stiffness: 100, damping: 30 }}
+                />
+                M ;
+              </H2>
+              <P className="text-sm md:text-base mt-1">{t("metric1")}</P>
+            </div>
+            <div>
+              <H2 className="text-3xl md:text-4xl font-bold text-white">
+                +R$
+                <CountingNumber
+                  number={40}
+                  inView={true}
+                  transition={{ stiffness: 100, damping: 30 }}
+                />
+                ;B
+              </H2>
+              <P className="text-sm md:text-base mt-1">{t("metric2")}</P>
+            </div>
+            <div>
+              <H2 className="text-3xl md:text-4xl font-bold text-white">
+                +
+                <CountingNumber
+                  number={200}
+                  inView={true}
+                  transition={{ stiffness: 100, damping: 30 }}
+                />
+                ;
+              </H2>
+              <P className="text-sm md:text-base mt-1">{t("metric3")}</P>
+            </div>
+          </div>
+        </div>
+
+        {/* Logos */}
+        <div className="pt-6 border-t border-white/20">
+          <h3 className="text-white text-lg font-semibold mb-4">
+            {t("clientsTitle")}
+          </h3>
+          <div className="bg-white py-6 rounded-md">
+            <InfiniteMovingCards
+              items={logoNodes}
+              direction="right"
+              speed="slow"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }

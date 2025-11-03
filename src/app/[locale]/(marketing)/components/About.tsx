@@ -24,9 +24,7 @@ function BulletCard({ children, className }: BulletProps) {
       )}
     >
       <div className="flex items-start gap-3">
-        <div className="flex size-9 items-center justify-center rounded-xl bg-brand-primary/10">
-          <span className="text-base">✨</span>
-        </div>
+        <div className="flex size-9 items-center justify-center rounded-xl bg-brand-primary/10"></div>
         <figcaption className="text-base font-medium leading-snug dark:text-white">
           {children}
         </figcaption>
@@ -68,7 +66,7 @@ export default function About() {
   return (
     <section
       ref={sectionRef}
-      className="relative text-center bg-gradient-to-t from-blue-400 via-blue-500 to-blue-600 py-16"
+      className="relative text-center bg-blue-900 py-16"
       aria-label={t("title")}
     >
       <div className="mx-auto max-w-6xl px-4">
@@ -79,12 +77,12 @@ export default function About() {
           {/* coluna da imagem */}
           <div className="flex justify-center md:justify-start md:pr-8 xl:pr-12">
             <Image
-              src="/cgd.svg"
+              src="/mapa_ativos2.svg"
               alt="cdg"
               width={600}
               height={400}
               priority={false}
-              className="h-auto w-full max-w-[560px]"
+              className="h-auto w-full max-w-[660px]"
             />
           </div>
 

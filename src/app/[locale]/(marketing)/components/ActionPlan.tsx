@@ -21,7 +21,7 @@ export default function ActionPlan() {
   ];
 
   return (
-    <div className="flex flex-col text-center">
+    <div className="flex flex-col text-center p-20">
       <H2 className="mb-6 text-3xl md:text-4xl font-semibold text-gray-700 drop-shadow-sm">
         {t("title")}
       </H2>
