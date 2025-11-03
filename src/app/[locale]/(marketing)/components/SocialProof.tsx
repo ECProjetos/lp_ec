@@ -12,11 +12,11 @@ const EMPRESAS_COUNT = 27;
 // Gera: /empresas/CLIENTES_01.png ... /empresas/CLIENTES_27.png
 const logos = Array.from({ length: EMPRESAS_COUNT }, (_, i) => {
   const n = String(i + 1).padStart(2, "0");
-  return `/empresas/CLIENTES_${n}.png`;
+  return `/CLIENTES_${n}.png`;
 });
 
 const logoNodes = logos.map((src, idx) => (
-  <div key={src} className="relative h-16 w-40 md:h-20 md:w-48">
+  <div key={src} className="relative h-32 w-40 md:h-32 md:w-48">
     <Image
       src={src}
       alt={`Logo cliente ${idx + 1}`}
