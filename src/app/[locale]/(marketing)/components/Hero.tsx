@@ -12,6 +12,11 @@ export default function Hero() {
 }
 export const products = [
   {
+    title: "EC Consultoria",
+    link: "/#infra",
+    thumbnail: "/site_anchor.png",
+  },
+  {
     title: "EC Data",
     link: "https://ecdata.com.br",
     thumbnail: "/ecdata.png",
@@ -20,10 +25,5 @@ export const products = [
     title: "EC Infra",
     link: "https://ecinfra.com.br",
     thumbnail: "/ecinfra.png",
-  },
-  {
-    title: "CMOG",
-    link: "https://cmog.com.br",
-    thumbnail: "/cmog.png",
   },
 ];

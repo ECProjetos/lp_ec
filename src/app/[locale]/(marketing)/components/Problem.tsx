@@ -168,7 +168,7 @@ const HoverCard = ({
         className={cn(
           "relative group grid h-[15.5rem] w-full cursor-pointer place-items-center overflow-hidden rounded-3xl p-8 text-left outline-none",
           "bg-white/70 backdrop-blur-xl transition-all duration-500",
-          "border border-black/5 dark:border-white/10",
+          "border border-black/5 ",
           "shadow-[0_2px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_40px_rgba(37,99,235,0.16)]",
           hovered ? "scale-[1.03]" : "scale-[1.00]"
         )}

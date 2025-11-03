@@ -98,11 +98,9 @@ export function Header() {
           duration: 0.5,
           ease: [0.4, 0.0, 0.2, 1],
         }}
-        className="text-2xl px-4 md:text-dm lg:text-md font-bold text-neutral-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto"
+        className="text-2xl px-4 md:text-dm lg:text-md font-bold text-neutral-700 text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto"
       >
-        <Highlight className="text-white dark:text-white">
-          {t("title")}
-        </Highlight>
+        <Highlight className="text-white ">{t("title")}</Highlight>
         <div>{t("subtitle")}</div>
       </motion.h1>
     </HeroHighlight>
@@ -133,8 +131,17 @@ export const ProductCard = ({
     >
       <a
         href={product.link}
-        target="_blank"
-        rel="noopener noreferrer"
+        onClick={(e) => {
+          if (product.link === "/#infra") {
+            e.preventDefault(); // impede abrir o link
+            const section = document.querySelector("#infra");
+            if (section) {
+              section.scrollIntoView({ behavior: "smooth" });
+            }
+          }
+        }}
+        target={product.link === "/#infra" ? undefined : "_blank"}
+        rel={product.link === "/#infra" ? undefined : "noopener noreferrer"}
         className="block group-hover/product:shadow-2xl"
       >
         <img

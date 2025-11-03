@@ -33,7 +33,7 @@ export default function SocialProof() {
     <section className="relative w-full bg-blue-900 text-white py-16 px-6 md:px-12 overflow-hidden">
       <div className="mx-auto max-w-7xl flex flex-col gap-12">
         {/* Título da seção */}
-        <div className="text-center">
+        <div className="text-center text-white">
           <H2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             {t("title")}
           </H2>
@@ -42,7 +42,7 @@ export default function SocialProof() {
         {/* Topo: Texto + Métricas */}
         <div className="flex flex-col lg:flex-row justify-between items-start gap-10">
           <div className="flex-1">
-            <P className="text-xl font-light leading-relaxed max-w-xl">
+            <P className="text-xl font-light leading-relaxed max-w-xl text-white">
               {t("text1")}
             </P>
           </div>
@@ -58,7 +58,9 @@ export default function SocialProof() {
                 />
                 M ;
               </H2>
-              <P className="text-sm md:text-base mt-1">{t("metric1")}</P>
+              <P className="text-sm md:text-base mt-1 text-white">
+                {t("metric1")}
+              </P>
             </div>
             <div>
               <H2 className="text-3xl md:text-4xl font-bold text-white">
@@ -70,7 +72,9 @@ export default function SocialProof() {
                 />
                 ;B
               </H2>
-              <P className="text-sm md:text-base mt-1">{t("metric2")}</P>
+              <P className="text-sm md:text-base mt-1 text-white">
+                {t("metric2")}
+              </P>
             </div>
             <div>
               <H2 className="text-3xl md:text-4xl font-bold text-white">
@@ -82,7 +86,9 @@ export default function SocialProof() {
                 />
                 ;
               </H2>
-              <P className="text-sm md:text-base mt-1">{t("metric3")}</P>
+              <P className="text-sm md:text-base mt-1 text-white">
+                {t("metric3")}
+              </P>
             </div>
           </div>
         </div>

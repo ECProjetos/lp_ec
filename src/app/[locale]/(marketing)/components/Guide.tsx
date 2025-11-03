@@ -44,31 +44,32 @@ export default function Guide() {
   ];
 
   return (
-    <div className="p-30 bg-blue-800">
-      <H2 className="mb-6 text-3xl md:text-4xl font-extrabold text-white drop-shadow-sm">
+    <div className="px-6 py-16 md:p-30 bg-blue-800">
+      <H2 className="mb-4 text-2xl sm:text-3xl md:text-4xl font-extrabold text-white text-center md:text-left drop-shadow-sm">
         {t("title")}
       </H2>
-      <Muted className="mb-14 max-w-3xl text-base md:text-lg text-white">
+      <Muted className="mb-10 md:mb-14 max-w-3xl text-sm sm:text-base md:text-lg text-white text-center md:text-left">
         {t("subtitle")}
       </Muted>
-      <div className="flex overflow-visible">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 md:p-6">
+
+      <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-10 md:gap-6 overflow-visible">
+        <div className="w-full md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4 p-2 sm:p-4 md:p-6">
           {features.map((feature, i) => (
             <div
               key={feature.name}
-              className={`relative overflow-hidden rounded-lg border bg-gray-200 p-6 shadow-sm ${
-                i === 2 ? "md:col-span-2" : ""
+              className={`relative overflow-hidden rounded-lg border bg-gray-200 p-5 sm:p-6 shadow-sm transition-all hover:shadow-md ${
+                i === 2 ? "sm:col-span-2" : ""
               }`}
             >
-              <div className="flex items-center space-x-4 ">
-                <div className="rounded-full hover:shadow-lg p-3">
-                  <feature.Icon className="h-6 w-6 text-primary" />
+              <div className="flex items-center space-x-3 sm:space-x-4">
+                <div className="rounded-full hover:shadow-lg p-2 sm:p-3 bg-white">
+                  <feature.Icon className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                 </div>
-                <h3 className="text-xl text-gray-700 font-semibold  ">
+                <h3 className="text-lg sm:text-xl text-gray-700 font-semibold">
                   {feature.name}
                 </h3>
               </div>
-              <p className="mt-4 text-muted-foreground">
+              <p className="mt-3 sm:mt-4 text-gray-600 text-sm sm:text-base">
                 {feature.description}
               </p>
 
@@ -76,14 +77,17 @@ export default function Guide() {
             </div>
           ))}
         </div>
-        <Image
-          src="/cgd.svg"
-          alt="cdg"
-          width={600}
-          height={400}
-          priority={false}
-          className="h-auto w-full max-w-[560px] px-5"
-        />
+
+        <div className="w-full md:w-1/2 flex justify-center md:justify-end">
+          <Image
+            src="/cgd.svg"
+            alt="cdg"
+            width={600}
+            height={400}
+            priority={false}
+            className="h-auto w-full max-w-[400px] sm:max-w-[500px] md:max-w-[560px] px-4 sm:px-5"
+          />
+        </div>
       </div>
     </div>
   );

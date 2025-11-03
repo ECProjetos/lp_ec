@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 
 export default function ActionPlan() {
   const t = useTranslations("actionPlan");
+
   const projects = [
     {
       title: t("step1.title"),
@@ -21,14 +22,21 @@ export default function ActionPlan() {
   ];
 
   return (
-    <div className="flex flex-col text-center p-20">
-      <H2 className="mb-6 text-3xl md:text-4xl font-semibold text-gray-700 drop-shadow-sm">
+    <div className="flex flex-col items-center text-center px-6 py-14 sm:px-10 md:p-20">
+      <H2 className="mb-6 text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-700 drop-shadow-sm">
         {t("title")}
       </H2>
 
-      <div className="flex m-10">
-        <HoverEffect items={projects} />
-        <Example />
+      <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-16 w-full mt-6">
+        {/* Cards */}
+        <div className="w-full md:w-1/2">
+          <HoverEffect items={projects} />
+        </div>
+
+        {/* Example Section */}
+        <div className="w-full md:w-1/2 flex justify-center">
+          <Example />
+        </div>
       </div>
     </div>
   );
