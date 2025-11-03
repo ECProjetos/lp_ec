@@ -70,7 +70,7 @@ export default function SocialProof() {
                   inView={true}
                   transition={{ stiffness: 100, damping: 30 }}
                 />
-                ;B
+                B;
               </H2>
               <P className="text-sm md:text-base mt-1 text-white">
                 {t("metric2")}
