@@ -44,8 +44,8 @@ const Circle = forwardRef<
     <div
       ref={ref}
       className={cn(
-        // menor no mobile, maior no md+
-        "z-10 flex size-20 md:size-24 items-center justify-center rounded-full border-2 bg-white p-2 md:p-3",
+        // ainda menor em telas menores
+        "z-10 flex size-18 md:size-20 lg:size-24 items-center justify-center rounded-full border-2 bg-white p-2 md:p-2.5 lg:p-3",
         "shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
         className
       )}
@@ -62,7 +62,7 @@ Circle.displayName = "Circle";
 const LogoCircle = forwardRef<
   HTMLDivElement,
   { src: string; alt: string; className?: string; imgW?: number; imgH?: number }
->(({ src, alt, className, imgW = 60, imgH = 60 }, ref) => {
+>(({ src, alt, className, imgW = 50, imgH = 50 }, ref) => {
   return (
     <Circle
       ref={ref as React.Ref<HTMLDivElement>}
@@ -91,27 +91,27 @@ const Example = () => {
       ref={containerRef}
       className={cn(
         "relative flex w-full items-center justify-center",
-        // menos padding no mobile, sem altura fixa; só min-h
+        // padding responsivo
         "p-4 md:p-6",
-        "min-h-[460px] md:h-[560px]",
-        // deixa beams aparecerem no mobile; corta só em telas maiores se quiser
-        "overflow-visible md:overflow-hidden"
+        // só min-height, nada de height fixa
+        "min-h-[380px] md:min-h-[420px] lg:min-h-[480px]",
+        // deixa beams aparecerem em todos tamanhos
+        "overflow-visible"
       )}
     >
       <div
         className={cn(
           "flex size-full max-w-5xl flex-col md:flex-row",
-          // centraliza no mobile, estica no desktop
           "items-center md:items-stretch",
-          "justify-between gap-6 md:gap-10"
+          "justify-between gap-5 md:gap-6 lg:gap-10"
         )}
       >
         {/* Usuário */}
         <div className="flex justify-center md:justify-start items-center">
           <Circle ref={userRef} title="Você">
             <svg
-              width="24"
-              height="24"
+              width="22"
+              height="22"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -128,21 +128,20 @@ const Example = () => {
         <div className="flex justify-center items-center">
           <LogoCircle
             ref={centerRef}
-            className="size-24 md:size-32"
+            className="size-20 md:size-24 lg:size-28"
             src={CENTER_IMG.src}
             alt={CENTER_IMG.alt}
-            imgW={100}
-            imgH={100}
+            imgW={90}
+            imgH={90}
           />
         </div>
 
         {/* Fontes */}
         <div
           className={cn(
-            // no mobile, vira um “bloco” mais compacto, com wrap
             "flex flex-wrap md:flex-col justify-center md:justify-center",
-            "gap-2 md:gap-3",
-            "max-w-xs md:max-w-none"
+            "gap-2 md:gap-2.5 lg:gap-3",
+            "max-w-[260px] md:max-w-none"
           )}
         >
           {LOGOS.map((logo, idx) => (
