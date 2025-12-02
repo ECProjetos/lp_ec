@@ -11,7 +11,7 @@ type BulletProps = {
   children: React.ReactNode;
   className?: string;
 };
-
+  
 function BulletCard({ children, className }: BulletProps) {
   return (
     <figure

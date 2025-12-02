@@ -10,7 +10,7 @@ export default function InfraGrid() {
   const t = useTranslations("infra");
 
   return (
-    <section id="infra" className="relative overflow-hidden  py-20">
+    <section id="infra" className="relative overflow-hidden  py-10">
       <div className="absolute inset-0 -z-10">
         <Image
           src="/map.png"

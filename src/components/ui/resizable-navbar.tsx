@@ -55,11 +55,7 @@ export const Navbar = ({ children, className }: NavbarProps) => {
   return (
     <motion.div
       ref={ref}
-      className={cn(
-        // se quiser colar no topo, troque top-20 por top-0
-        "sticky inset-x-0 top-0 z-40 w-full",
-        className
-      )}
+      className={cn("sticky inset-x-0 top-0 z-40 w-full", className)}
     >
       {React.Children.map(children, (child) =>
         React.isValidElement(child)
@@ -78,24 +74,22 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
     <motion.div
       animate={{
         backdropFilter: visible ? "blur(10px)" : "none",
-        // ⬜️ fundo branco translúcido
         backgroundColor: visible
           ? "rgba(255,255,255,0.9)"
           : "rgba(255,255,255,1)",
-        // ⬜️ sombras/bordas neutras
         boxShadow: visible
-          ? "0 2px 16px rgba(0,0,0,0.06), 0 1px 0 rgba(0,0,0,0.04)"
-          : "0 1px 0 rgba(0,0,0,0.04)",
+          ? "0 2px 12px rgba(0,0,0,0.05), 0 1px 0 rgba(0,0,0,0.03)"
+          : "0 1px 0 rgba(0,0,0,0.03)",
         borderColor: visible ? "rgba(0,0,0,0.10)" : "rgba(0,0,0,0.08)",
-        width: visible ? "40%" : "100%",
-        y: visible ? 20 : 0,
+        width: visible ? "32%" : "100%",
+        y: visible ? 16 : 0,
       }}
-      transition={{ type: "spring", stiffness: 200, damping: 50 }}
-      style={{ minWidth: "800px" }}
+      transition={{ type: "spring", stiffness: 220, damping: 45 }}
+      // navbar mais estreita em desktops
+      style={{ minWidth: "640px" }}
       className={cn(
-        "relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-full px-4 py-2 lg:flex",
-        "border", // aplica a borderColor animada acima
-        // força branco também no dark mode
+        "relative z-[60] mx-auto hidden w-full max-w-6xl flex-row items-center justify-between self-start rounded-full px-3 py-1.5 lg:flex",
+        "border",
         "bg-white text-neutral-900 dark:bg-white dark:text-neutral-900",
         className
       )}
@@ -112,7 +106,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
     <motion.div
       onMouseLeave={() => setHovered(null)}
       className={cn(
-        "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium transition duration-200 lg:flex lg:space-x-2",
+        "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-1.5 text-[0.85rem] font-medium transition duration-200 lg:flex",
         "text-neutral-900",
         className
       )}
@@ -121,14 +115,13 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
         <a
           onMouseEnter={() => setHovered(idx)}
           onClick={onItemClick}
-          className="relative px-4 py-2 font-semibold"
+          className="relative px-3 py-1.5 font-medium"
           key={`link-${idx}`}
           href={item.link}
         >
           {hovered === idx && (
             <motion.div
               layoutId="hovered"
-              // ⬜️ highlight de hover neutro
               className="absolute inset-0 h-full w-full rounded-full bg-neutral-100 ring-1 ring-inset ring-neutral-200"
             />
           )}
@@ -144,25 +137,22 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
     <motion.div
       animate={{
         backdropFilter: visible ? "blur(10px)" : "none",
-        // ⬜️ fundo branco translúcido no mobile
         backgroundColor: visible
           ? "rgba(255,255,255,0.9)"
           : "rgba(255,255,255,1)",
-        // ⬜️ sombra/borda neutras
         boxShadow: visible
-          ? "0 2px 16px rgba(0,0,0,0.06)"
-          : "0 1px 0 rgba(0,0,0,0.04)",
-        width: visible ? "90%" : "100%",
-        paddingRight: visible ? "12px" : "0px",
-        paddingLeft: visible ? "12px" : "0px",
-        borderRadius: visible ? "12px" : "2rem",
-        y: visible ? 20 : 0,
+          ? "0 2px 12px rgba(0,0,0,0.05)"
+          : "0 1px 0 rgba(0,0,0,0.03)",
+        width: visible ? "92%" : "100%",
+        paddingRight: visible ? "10px" : "0px",
+        paddingLeft: visible ? "10px" : "0px",
+        borderRadius: visible ? "10px" : "1.75rem",
+        y: visible ? 14 : 0,
       }}
-      transition={{ type: "spring", stiffness: 200, damping: 50 }}
+      transition={{ type: "spring", stiffness: 220, damping: 45 }}
       className={cn(
-        "relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between px-0 py-2 lg:hidden",
+        "relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between px-0 py-1 lg:hidden",
         "border border-neutral-200",
-        // força branco no dark
         "bg-white text-neutral-900 dark:bg-white dark:text-neutral-900",
         className
       )}
@@ -179,7 +169,7 @@ export const MobileNavHeader = ({
   return (
     <div
       className={cn(
-        "flex w-full flex-row items-center justify-between",
+        "flex w-full flex-row items-center justify-between gap-1",
         className
       )}
     >
@@ -201,8 +191,7 @@ export const MobileNavMenu = ({
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -6 }}
           className={cn(
-            // ⬜️ dropdown branco com ring neutro
-            "absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-lg bg-white/95 px-4 py-8 shadow-[0_10px_30px_rgba(0,0,0,0.06)] ring-1 ring-neutral-200",
+            "absolute inset-x-0 top-14 z-50 flex w-full flex-col items-start justify-start gap-3 rounded-lg bg-white/95 px-3 py-6 shadow-[0_8px_24px_rgba(0,0,0,0.06)] ring-1 ring-neutral-200",
             className
           )}
         >
@@ -220,8 +209,7 @@ export const MobileNavToggle = ({
   isOpen: boolean;
   onClick: () => void;
 }) => {
-  // ⬜️ ícones em neutro-800 (funciona no branco)
-  const iconClass = "text-neutral-800";
+  const iconClass = "h-5 w-5 text-neutral-800";
   return isOpen ? (
     <Ship className={iconClass} onClick={onClick} />
   ) : (
@@ -233,9 +221,10 @@ export const NavbarLogo = () => {
   return (
     <a
       href="#"
-      className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-neutral-900"
+      className="relative z-20 mr-3 flex items-center space-x-2 px-1.5 py-0.5 text-xs font-normal text-neutral-900"
     >
-      <Image src="/ecprojetos.png" alt="logo" width={200} height={100} />
+      {/* logo menor */}
+      <Image src="/ecprojetos.png" alt="logo" width={150} height={60} />
     </a>
   );
 };

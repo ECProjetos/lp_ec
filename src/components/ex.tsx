@@ -44,7 +44,8 @@ const Circle = forwardRef<
     <div
       ref={ref}
       className={cn(
-        "z-10 flex size-24 items-center justify-center rounded-full border-2 bg-white p-3",
+        // menor no mobile, maior no md+
+        "z-10 flex size-20 md:size-24 items-center justify-center rounded-full border-2 bg-white p-2 md:p-3",
         "shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
         className
       )}
@@ -89,11 +90,22 @@ const Example = () => {
     <div
       ref={containerRef}
       className={cn(
-        "relative flex w-full items-center justify-center overflow-hidden p-6",
-        "h-[620px] md:h-[560px]"
+        "relative flex w-full items-center justify-center",
+        // menos padding no mobile, sem altura fixa; só min-h
+        "p-4 md:p-6",
+        "min-h-[460px] md:h-[560px]",
+        // deixa beams aparecerem no mobile; corta só em telas maiores se quiser
+        "overflow-visible md:overflow-hidden"
       )}
     >
-      <div className="flex size-full max-w-5xl flex-col md:flex-row items-stretch justify-between gap-6 md:gap-10">
+      <div
+        className={cn(
+          "flex size-full max-w-5xl flex-col md:flex-row",
+          // centraliza no mobile, estica no desktop
+          "items-center md:items-stretch",
+          "justify-between gap-6 md:gap-10"
+        )}
+      >
         {/* Usuário */}
         <div className="flex justify-center md:justify-start items-center">
           <Circle ref={userRef} title="Você">
@@ -116,7 +128,7 @@ const Example = () => {
         <div className="flex justify-center items-center">
           <LogoCircle
             ref={centerRef}
-            className="size-28 md:size-32"
+            className="size-24 md:size-32"
             src={CENTER_IMG.src}
             alt={CENTER_IMG.alt}
             imgW={100}
@@ -125,7 +137,14 @@ const Example = () => {
         </div>
 
         {/* Fontes */}
-        <div className="flex max-h-full flex-wrap md:flex-col justify-center gap-3 md:gap-2">
+        <div
+          className={cn(
+            // no mobile, vira um “bloco” mais compacto, com wrap
+            "flex flex-wrap md:flex-col justify-center md:justify-center",
+            "gap-2 md:gap-3",
+            "max-w-xs md:max-w-none"
+          )}
+        >
           {LOGOS.map((logo, idx) => (
             <LogoCircle
               key={logo.src}

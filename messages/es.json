@@ -1,0 +1,130 @@
+{
+  "shared": { "viewCases": "Ver historias de éxito" },
+  "hero": {
+    "title": "Inteligencia aplicada para infraestructura.",
+    "subtitle": "Conocimiento técnico especializado, inteligencia basada en datos y una visión sistémica del territorio y la logística para ofrecer soluciones integradas, sostenibles y económicamente viables en ingeniería, planificación y operaciones.",
+    "ctaPrimary": "Agenda una evaluación gratuita",
+    "ctaSecondary": "Ver historias de éxito"
+  },
+  "problem": {
+    "tag": "Del papel a la realidad: donde las soluciones se pierden",
+    "title": "Lo que separa las soluciones impactantes de las que nunca salen del papel:",
+    "subtitle": "Líderes e inversionistas enfrentan tres obstáculos más allá del papel: decisiones estratégicas sin datos confiables, operaciones que no sostienen el crecimiento planificado y proyectos que se estancan por falta de legitimidad técnica y regulatoria.",
+    "card1": {
+      "title": "Decisiones sin datos confiables",
+      "desc": "Estudios largos sin claridad, proyecciones cuestionables y datos dispersos convierten decisiones estratégicas en apuestas — llevando a capital mal asignado, retrasos y oportunidades perdidas."
+    },
+    "card2": {
+      "title": "Operaciones que no rinden",
+      "desc": "Activos subutilizados, permisos atrasados y KPIs descontrolados erosionan el ROI esperado. Sin inteligencia operacional continua, el desempeño cae y los riesgos regulatorios se acumulan."
+    },
+    "card3": {
+      "title": "Proyectos que no avanzan",
+      "desc": "Regulaciones complejas y análisis que no convencen a los reguladores mantienen proyectos multimillonarios en el cajón durante años — inmovilizando capital mientras se cierran ventanas de oportunidad."
+    }
+  },
+  "guide": {
+    "tag": "Cada problema tiene una solución",
+    "title": "Tres pilares. Un objetivo: tu proyecto entregado.",
+    "subtitle": "Desde estudios de viabilidad hasta datos operativos en tiempo real, ofrecemos soluciones integradas que eliminan los cuellos de botella que frenan la infraestructura en Brasil.",
+    "card1": {
+      "title": "Consultoría Estratégica y Técnica",
+      "desc": "Estudios y proyectos técnicamente rigurosos con visión territorial y foco en la factibilidad para transporte, logística e infraestructura."
+    },
+    "card2": {
+      "title": "Apoyo a Operaciones y Gestión de Activos",
+      "desc": "Herramientas, procesos y equipos para garantizar eficiencia, cumplimiento y valor a lo largo de la operación."
+    },
+    "card3": {
+      "title": "Inteligencia de Datos y Modelado",
+      "desc": "Soluciones tecnológicas, análisis econométricos y simulaciones para apoyar estrategias con precisión y agilidad."
+    },
+    "cta": "Hablemos"
+  },
+  "social": {
+    "title": "Resultados que hablan por sí solos",
+    "text1": "A lo largo de los años, EC Projetos ha contribuido directamente a la transformación de la infraestructura logística de Brasil.",
+    "metric1": "+130 millones de toneladas por año de demanda estimada en diversos proyectos evaluados.",
+    "metric2": "+R$40 mil millones en CAPEX estimado en proyectos de ingeniería consultiva.",
+    "metric3": "+200 proyectos estructurantes de gran escala evaluados en su viabilidad técnica, económica y ambiental.",
+    "clientsTitle": "Algunos de nuestros clientes"
+  },
+  "actionPlan": {
+    "title": "Cómo funciona nuestra colaboración",
+    "subtitle": "De la evaluación a la entrega: un proceso transparente",
+    "step1": {
+      "title": "Entendemos tu desafío",
+      "desc": "Diagnóstico estratégico para mapear cuellos de botella y definir el mejor camino."
+    },
+    "step2": {
+      "title": "Diseñamos la solución",
+      "desc": "Un plan de acción personalizado con alcance, metodología, cronograma realista e inversión."
+    },
+    "step3": {
+      "title": "Entregamos resultados",
+      "desc": "Ejecución con un equipo dedicado, seguimiento en tiempo real e impacto medible."
+    }
+  },
+  "about": {
+    "title": "Lo que nos hace únicos en el sector",
+    "items": {
+      "legitimacy": "Legitimidad técnica e institucional — los proyectos avanzan con el rigor que exigen reguladores e inversionistas.",
+      "speed": "Velocidad con precisión — tecnología propia y métodos ágiles para entregar en semanas lo que otros tardan meses.",
+      "partnership": "Asociación integrada a largo plazo — Consultoría + Operaciones + Datos.",
+      "techDNA": "Tecnología con ADN de consultoría — herramientas propias impulsando decisiones."
+    }
+  },
+  "finalCTA": {
+    "headline": "¿Llevamos tu proyecto al siguiente nivel?",
+    "sub": "Descubre cómo podemos generar valor para tu proyecto.",
+    "cta": "Hablemos"
+  },
+  "footer": {
+    "contactTitle": "Contacto",
+    "address": "R. Lauro Linhares, 2123 - Sala 508 - Trindade, Florianópolis - SC, Brasil, 88036-003",
+    "email": "contato@ecprojetos.com.br",
+    "phone": "+55 (48) 99114-7704",
+    "rights": "Todos los derechos reservados.",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Uso",
+    "languageLabel": "Seleccionar idioma",
+    "whatsappTitle": "Hablar por WhatsApp",
+    "instagramTitle": "Visitar Instagram",
+    "linkedinTitle": "Visitar LinkedIn"
+  },
+  "infra": {
+    "map_alt": "Mapa mundial de fondo",
+    "flow_alt": "Iconos del flujo de infraestructura",
+    "title": "Consultoría en estructuración de proyectos de infraestructura",
+    "subtitle": "Puertos, ferrocarriles, aeropuertos, hidrovías, carreteras y más",
+    "block1": {
+      "title": "Estudios de Planificación y Estrategia",
+      "item1": "Planificación de transporte y logística multimodal",
+      "item2": "Análisis de demanda y oferta por modo",
+      "item3": "Posicionamiento competitivo y estudios de mercado",
+      "item4": "Estrategia de operación y expansión de activos",
+      "item5": "Análisis regulatorio"
+    },
+    "block2": {
+      "title": "Factibilidad Técnica, Económica y Ambiental",
+      "item1": "Estudios de factibilidad y pre-factibilidad (EVTEA)",
+      "item2": "Modelado económico y financiero",
+      "item3": "Evaluación de riesgos e impacto ambiental",
+      "item4": "Simulaciones de escenarios y análisis multicriterio"
+    },
+    "block3": {
+      "title": "Ingeniería Consultiva",
+      "item1": "Proyectos conceptuales, básicos y ejecutivos",
+      "item2": "Proyectos para puertos, aeropuertos, hidrovías, ferrocarriles y carreteras",
+      "item3": "Evaluaciones técnicas para licenciamiento y concesión",
+      "item4": "Consultoría regulatoria e institucional"
+    },
+    "block4": {
+      "title": "Apoyo a la Gestión y Operación",
+      "item1": "Planes estratégicos y maestros",
+      "item2": "Monitoreo e indicadores de desempeño",
+      "item3": "Apoyo a la operación de terminales y activos",
+      "item4": "Modelado de PPP y concesiones"
+    }
+  }
+}

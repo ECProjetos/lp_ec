@@ -7,7 +7,7 @@ import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import { H2, P } from "@/components/ui/typography";
 import { CountingNumber } from "@/components/ui/counting-number";
 
-const EMPRESAS_COUNT = 34;
+const EMPRESAS_COUNT = 30;
 
 // Gera: /empresas/CLIENTES_01.png ... /empresas/CLIENTES_27.png
 const logos = Array.from({ length: EMPRESAS_COUNT }, (_, i) => {

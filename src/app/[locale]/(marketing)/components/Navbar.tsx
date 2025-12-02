@@ -1,4 +1,5 @@
 "use client";
+import LanguageSwitcher from "@/components/ui/language-switcher";
 import {
   Navbar,
   NavBody,
@@ -8,7 +9,6 @@ import {
   MobileNavToggle,
 } from "@/components/ui/resizable-navbar";
 import { useState } from "react";
-import Link from "next/link";
 import { FaWhatsapp, FaInstagram, FaLinkedin } from "react-icons/fa"; // ← ícones das redes
 
 export function NavbarDemo() {
@@ -22,6 +22,7 @@ export function NavbarDemo() {
         {/* Ícones de redes sociais */}
         <div className="flex items-center gap-4">
           {/* WhatsApp */}
+          <LanguageSwitcher />
           <a
             href="https://wa.me/5548991147704"
             target="_blank"
@@ -56,8 +57,6 @@ export function NavbarDemo() {
         </div>
       </NavBody>
 
-      {/* Mobile nav */}
-      {/* Mobile nav */}
       <MobileNav>
         <MobileNavHeader>
           <NavbarLogo />
