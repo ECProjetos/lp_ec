@@ -42,7 +42,7 @@ export const InfiniteMovingCards = ({
   const getDirection = () => {
     containerRef.current?.style.setProperty(
       "--animation-direction",
-      direction === "left" ? "forwards" : "reverse"
+      direction === "left" ? "forwards" : "reverse",
     );
   };
 
@@ -66,9 +66,9 @@ export const InfiniteMovingCards = ({
       <ul
         ref={scrollerRef}
         className={cn(
-          "flex w-max min-w-full shrink-0 flex-nowrap gap-[4px] py-6",
+          "flex w-max min-w-full shrink-0 flex-nowrap items-center gap-8 py-6",
           start && "animate-scroll",
-          pauseOnHover && "hover:[animation-play-state:paused]"
+          pauseOnHover && "hover:[animation-play-state:paused]",
         )}
       >
         {items.map((item, idx) => (
