@@ -10,10 +10,13 @@ import { CountingNumber } from "@/components/ui/counting-number";
 const EMPRESAS_COUNT = 30;
 
 // Gera: /empresas/CLIENTES_01.png ... /empresas/CLIENTES_27.png
-const logos = Array.from({ length: EMPRESAS_COUNT }, (_, i) => {
-  const n = String(i + 1).padStart(2, "0");
-  return `/CLIENTEs_${n}.png`;
-});
+const logos = [
+  ...Array.from({ length: EMPRESAS_COUNT }, (_, i) => {
+    const n = String(i + 1).padStart(2, "0");
+    return `/CLIENTEs_${n}.png`;
+  }),
+  "/minitab.png",
+];
 
 const logoNodes = logos.map((src, idx) => (
   <div key={src} className="relative h-32 w-40 md:h-32 md:w-48">
@@ -104,6 +107,9 @@ export default function SocialProof() {
               speed="slow"
             />
           </div>
+
+          <p className="mt-6 text-center text-base md:text-lg font-light leading-relaxed text-white/90">
+          A EC Projetos é representante oficial na América Latina e Caribe do software de simulação dinâmica SIMUL8, da Minitab.</p>
         </div>
       </div>
     </section>

@@ -9,5 +9,5 @@ export default createMiddleware({
 
 export const config = {
   // Inclui todas as rotas de app, API pode ficar de fora se quiser
-  matcher: ["/", "/(pt|en|it)/:path*"],
+  matcher: ["/", "/(pt|en|it|es)/:path*"],
 };
